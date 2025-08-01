@@ -50,13 +50,11 @@ LOCAL_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    "daphne"
+    "daphne",
+    "jazzmin",
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + LOCAL_APPS + DJANGO_APPS
-
-
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -141,7 +139,14 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = "staticfiles/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+from .jazzmin_conf import * # noqa
